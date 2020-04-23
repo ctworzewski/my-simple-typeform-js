@@ -1,53 +1,20 @@
 const typeformList = [
 
-    {
-        question: 'Lubisz jeść?',
-        choice: 'Tak Nie',
-    },
-    {
-        question: 'Ile lat ma Ziemia',
-        choice: 'Tak Nie',
-    },
-    {
-        question: 'Ile lat ma Ziemia',
-        choice: 'Tak Nie',
-    },
-    {
-        question: 'Czy mne lubisz',
-        choice: 'Tak Nie',
-    }
+    'Czy jesteś dorosły?', 'Czy mnie lubisz', 'Czy skończyłeś się uczyć'
 ];
 
-let $text = null;
-let $choice = null;
+let $question = document.querySelector('.question');
 
-function displayTypeform(typeformIndex) {
-    let typeform = typeformList[typeformIndex];
-    // $text.setAttribute('src', typeform.text);
-    $text.textContent = typeform.question;
-    $choice.textContent = typeform.choice;
+console.log(typeformList)
+
+let $btnNext = document.querySelector('.btnNext');
+
+let numberQuestion = 0;
+
+function changeQuestions() {
+
+    $question.textContent = typeformList[numberQuestion++];
+
 }
 
-function changeTypeform(index) {
-    let typeform = typeformList[index];
-    displayTypeform(index);
-
-    setInterval(() => {
-        index++;
-
-        if (index === typeformList.length) {
-            index = 0;
-        }
-        displayTypeform(index);
-    }, 2000)
-}
-
-function setup() {
-    $text = document.querySelector('.typeform__text')
-    $choice = document.querySelector('.typeform__checkbox');
-    console.log('działa');
-
-    changeTypeform(0);
-}
-
-window.addEventListener('click', setup);
+$btnNext.addEventListener('click', changeQuestions);
