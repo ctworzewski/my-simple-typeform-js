@@ -13,7 +13,7 @@ body {
     padding: 5px;
 }
 
-.typeform__text {
+.question {
     display: block;
     color: white;
     margin: 0;
@@ -21,4 +21,12 @@ body {
 
 .typeform__checkbox {
     display: block;
+}
+
+.btn {
+    width: 80px;
+    height: 40px;
+    text-transform: uppercase;
+    margin-top: 20px;
+
 }
