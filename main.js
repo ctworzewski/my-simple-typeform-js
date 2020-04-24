@@ -8,7 +8,7 @@ let $question = document.querySelector('.question');
 console.log(typeformList)
 
 let $btnNext = document.querySelector('.btnNext');
-
+let $btnPrev = document.querySelector('.btnPrev');
 let numberQuestion = 0;
 
 function changeQuestions() {
@@ -26,4 +26,8 @@ function changeQuestions() {
     }
 }
 
+function prevQuestion() {
+    $question.textContent = typeformList[numberQuestion--];
+}
+$btnPrev.addEventListener('click', prevQuestion);
 $btnNext.addEventListener('click', changeQuestions);
