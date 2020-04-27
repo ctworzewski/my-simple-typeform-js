@@ -27,14 +27,16 @@ function checkShow() {
 } */
 
 
-const tab = ['element 1', 'element 2', 'element 3'];
+const tab = ['element 1', 'element 2', 'element 3', 'element 4', 'element 5', 'element 6'];
 
 // funkcja sprawdza czy istnieje dany element w tablicy
 // jeśli istnieje to go pokazuje
 function showQuestion(indexArray) {
+    console.log('pokauje element o indeksie: ', indexArray);
     let $question = document.querySelector('.question');
     if (indexArray <= tab.length - 1 && indexArray >= 0) {
         $question.textContent = tab[indexArray];
+        lastShowIndex = indexArray; //zapamiętanie ostatniego wyświetlonego elementu tablicy
     } else {
         $question.textContent = '';
         console.log('Nie ma takiego indeksu tablicy');
@@ -43,9 +45,26 @@ function showQuestion(indexArray) {
 
 
 let $showIndexQuestion = document.querySelector('.showIndexQuestion');
+let lastShowIndex = -1; //wyświetlenie istniejącego indeksu tablicy
 
+// po podaniu w inpucie  indkesu tablicy i kliknięcu Pokaz, wyświetla daną wartość z tablicy na strone
 $showIndexQuestion.addEventListener('click', function () {
     let $indexQuestion = document.querySelector('.IndexQuestion').value;
     showQuestion($indexQuestion);
+})
 
+
+let $btnNext = document.querySelector('.btnNext');
+$btnNext.addEventListener('click', function () {
+
+    showQuestion(lastShowIndex + 1);
+
+})
+
+let $btnPrev = document.querySelector('.btnPrev');
+
+// przez kliknięcie pobieramy ostatni wyświetlany element i odejmujemy 1
+$btnPrev.addEventListener('click', function () {
+    console.log('ostatni element: ', lastShowIndex)
+    showQuestion(lastShowIndex - 1);
 })
