@@ -36,8 +36,16 @@ function showQuestion(indexArray) {
     if (indexArray <= tab.length - 1 && indexArray >= 0) {
         $question.textContent = tab[indexArray];
     } else {
+        $question.textContent = '';
         console.log('Nie ma takiego indeksu tablicy');
     }
 }
 
-showQuestion(2);
+
+let $showIndexQuestion = document.querySelector('.showIndexQuestion');
+
+$showIndexQuestion.addEventListener('click', function () {
+    let $indexQuestion = document.querySelector('.IndexQuestion').value;
+    showQuestion($indexQuestion);
+
+})
