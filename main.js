@@ -1,33 +1,20 @@
-const typeformList = [
-
-    'Czy jesteś dorosły?', 'Czy mnie lubisz', 'Czy skończyłeś się uczyć'
-];
+/* const listsQuestion = ['Czy mnie lubisz?', 'Czy lubisz się uczyć?', 'Czy kochasz JavaScript?', 'Czy lubisz swoją pracę?', 'Czy masz ochotę na obiad?'];
 
 let $question = document.querySelector('.question');
-
-console.log(typeformList)
-
 let $btnNext = document.querySelector('.btnNext');
 let $btnPrev = document.querySelector('.btnPrev');
-let numberQuestion = 0;
 
-function changeQuestions() {
-    let $alert = document.querySelector('.alert');
-    $question.textContent = typeformList[numberQuestion++];
-    if (numberQuestion > typeformList.length) {
-        console.log('Nie ma więcej pytań');
-        $alert.textContent = 'Nie ma więcej pytań';
-        $alert.style.color = 'red';
+ */
 
-    } else {
-        console.log('następne pytanie');
-        $alert.textContent = 'następne pytanie';
-        $alert.style.color = 'green';
-    }
-}
+const tab = ['element 1', 'element 2', 'element 3'];
 
-function prevQuestion() {
-    $question.textContent = typeformList[numberQuestion--];
-}
-$btnPrev.addEventListener('click', prevQuestion);
-$btnNext.addEventListener('click', changeQuestions);
+
+
+const tab1 = new Array();
+tab1[0] = 'element 1';
+tab1[1] = 'element 2';
+tab1[2] = 'element 3';
+tab1[3] = 'element 4';
+
+tab1.push(60);
+tab1[10] = 'ciasteczko';
